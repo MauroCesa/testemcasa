@@ -14,8 +14,7 @@
     <ion-input [(ngModel)]="password" name="password" type="password" required></ion-input>
   </ion-item>
   <div class="ion-padding">
-    <ion-button expand="block" color="primary" (click)="login()" [disabled]="!loginForm.valid">Entrar</ion-button>
-    <ion-button expand="block" color="primary" (click)="onSubmit()">Entrar</ion-button>
+    <ion-button expand="block" color="primary" (click)="login()" >Entrar</ion-button>
+    <ion-button expand="block" color="primary" routerLink="../cadastro/cadastro.page.html">Criar uma nova conta</ion-button>
   </div>
-  <ion-button routerLink="../cadastro/cadastro.page.html" expand="block">Criar uma nova conta</ion-button>
 </ion-content>

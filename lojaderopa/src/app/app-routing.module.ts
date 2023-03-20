@@ -16,7 +16,7 @@ const routes: Routes = [
   },
   {
     path: 'auth-service',
-    loadChildren: () => import('./authService/auth.service').then( m => m.AuthServicePageModule)
+    loadChildren: () => import('./authService/auth.service').then( m => m.AuthService)
   }
 ];
 @NgModule({

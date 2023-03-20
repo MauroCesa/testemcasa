@@ -10,24 +10,47 @@ export class AuthService {
   constructor() { }
 
   login(email: string, password: string): boolean {
-    // Implemente aqui a lógica para autenticar o usuário
-    // Se o usuário for autenticado com sucesso, defina a propriedade isAuthenticated para true e retorne true
-    // Caso contrário, retorne false
+    if (email === 'user@example.com' && password === '123456') {
+      this.isAuthenticated = true;
+      return true;
+    } else {
+      return false;
+    }
   }
 
   logout(): void {
-    // Implemente aqui a lógica para fazer logout do usuário
-    // Defina a propriedade isAuthenticated para false
+  this.isAuthenticated = false;
   }
 
-  isAuthenticated(): boolean {
-    // Implemente aqui a lógica para verificar se o usuário está autenticado
-    // Retorne o valor da propriedade isAuthenticated
-  }
+  getIsAuthenticated(): boolean {
+interface LoginPage {
+  getIsAuthenticated: boolean;
+};
+
+const authenticatedUser: LoginPage = {
+  getIsAuthenticated: true,
+};
+
+const unauthenticatedUser: LoginPage = {
+  getIsAuthenticated: false,
+};
+
+function checkAuthentication(user: LoginPage): boolean {
+  return user.getIsAuthenticated;
+};
+
+  console.log(checkAuthentication(authenticatedUser));
+  console.log(checkAuthentication(unauthenticatedUser));
+    return this.isAuthenticated;
+}
+
 
   resetPassword(email: string): boolean {
-    // Implemente aqui a lógica para redefinir a senha do usuário
-    // Se a redefinição da senha for bem-sucedida, retorne true
-    // Caso contrário, retorne false
+    if (email === 'user@example.com') {
+      this.isAuthenticated = false;
+      return true;
+    } else {
+      return false;
+    }
   }
 }
