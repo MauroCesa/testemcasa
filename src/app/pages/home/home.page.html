@@ -1,0 +1,112 @@
+
+ <ion-header  class="headerX ion-no-border" slot="top" >
+     
+  <ion-icon  routerLink='/cadastro' routerLinkActive="active-link" name="log-in-outline"></ion-icon>
+  <ion-icon fill="clear" routerLink="/login" routerLinkActive="active-link" name="person-outline">Login</ion-icon>
+  <ion-icon fill="clear" routerLink="/favoritos" routerLinkActive="active-link" name="cart-outline">Favoritos</ion-icon>
+
+
+
+</ion-header>
+
+
+<ion-header   class="ion-no-border" slot="top">
+
+
+
+  <div class="header">
+<ion-button fill="clear"  routerLink="/home">
+<div class="logo" >
+  <ion-img src="../../assets/imagens/NidasLogo-c.png" ></ion-img>
+</div>
+</ion-button>
+
+
+
+
+
+<ion-button fill="clear" style="color:#8C52FF; margin-left: 70px;" routerLink="/home" routerLinkActive="active-link">Home</ion-button>
+<ion-button fill="clear" style="color:#8C52FF; margin-left: 70px; margin-right: 20px;" routerLink="/news"   routerLinkActive="active-link">News</ion-button>
+<!--<ion-button fill="clear" style="color:#8C52FF; margin-left: 70px;" routerLink="/roupas"  routerLinkActive="active-link">Roupas</ion-button>-->
+<ion-button fill="clear" style="margin-left: 70px;" routerLink="/roupas" >
+  <div class="opcoes">
+<div class="dropdown">
+
+<a style="color:#8C52FF; margin-left: 3px;" (mouseenter)="showDropdown()" >Roupas </a>
+<ion-icon (mouseenter)="showDropdown()" style="color:#8C52FF; margin-bottom: -2px;" name="chevron-down-outline"></ion-icon>
+
+</div>
+
+
+</div>
+</ion-button>
+
+<ion-list  (mouseover)="showDropdown()" lines="none" style="color:#8C52FF; margin-top: -40px;" *ngIf="dropdownVisible" >
+<div (mouseleave)="hideDropdown()">
+<ion-item routerLink="/roupafem" >
+Feminino
+</ion-item>
+<ion-item routerLink="/roupamasc">
+Masculino
+</ion-item>
+</div>
+
+
+</ion-list>
+<ion-button fill="clear" style="color:#8C52FF; margin-left: 70px;" routerLink="/faleconosco"  routerLinkActive="active-link">Fale Conosco</ion-button>
+</div>
+
+
+<div class="container" (click)="toggleMenu()">
+
+  <div class="hamburger">
+      <div class="line" id="line1"></div>
+      <div class="line" id="line2"></div>
+      <div class="line" id="line3"></div>
+  </div>
+  
+  <aside class="sidebar">
+      <nav>
+          <ul class="menu">
+              <li class="menu-item"><a routerLink="/home" class="menu-link">Home</a></li>      <br><br><br>
+
+
+              <li class="menu-item">
+                <div class="dropdown-2"> 
+                  <a routerLink="/roupas" (mouseenter)="showDropdown()" class="menu-link">Roupas</a>
+              <ion-icon (mouseenter)="showDropdown()" style="color:#6332c4; padding-left: 6px; " name="chevron-down-outline"></ion-icon> </div>
+
+              <ion-list class="dropdown2list"  (mouseover)="showDropdown()" lines="none" *ngIf="dropdownVisible" >
+                <div class="dropdown2item" (mouseleave)="hideDropdown()">
+
+                <ion-item routerLink="/roupafem" >
+                Feminino
+                </ion-item>
+                <ion-item routerLink="/roupamasc">
+                Masculino
+                </ion-item>
+                </div>
+                
+                </ion-list>
+
+              </li>      <br><br><br>
+
+
+              <li class="menu-item"><a routerLink="/news" class="menu-link">News</a></li><br>      <br><br>
+              <li class="menu-item"><a routerLink="/faleconosco" class="menu-link">Fale Conosco</a></li>
+          </ul>
+      </nav>
+  </aside>
+
+
+
+
+</div>
+</ion-header>
+
+<ion-content>
+  <div class="logo2"  >
+    <ion-img src="../../assets/imagens/NidasLogo-c.png" ></ion-img>
+  </div>
+  
+</ion-content>
